@@ -36,9 +36,9 @@ try:
           logfile.write(datetime.now().strftime("%Y/%m/%d -- %H:%M:%S  -- Door Opening/Closing \n"))
           logfile.close()
 	        print(datetime.now().strftime("%Y/%m/%d -- %H:%M:%S  -- Door Opening/Closing \n"))
-           while GPIO.input(16) == GPIO.HIGH and GPIO.input(18) == GPIO.HIGH:
+          while GPIO.input(16) == GPIO.HIGH and GPIO.input(18) == GPIO.HIGH:
              time.sleep(.5)
-           else:
+            else:
              if GPIO.input(16) == GPIO.LOW:  #Door is Closed
                   logfile = open("/home/pi/GarageWeb/static/log.txt","a")
                   logfile.write(datetime.now().strftime("%Y/%m/%d -- %H:%M:%S  -- Door Closed \n"))
