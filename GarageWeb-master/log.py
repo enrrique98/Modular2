@@ -25,7 +25,8 @@ DoorOpenTimerMessageSent = 1  #Turn off messages until timer is started
 try:
         while 1 >= 0:
          time.sleep(1) #Door Open Timer has Started
-         if DoorOpenTimer == 1: currentTimeDate=datetime.strptime(datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S'),'%Y-%m-%d %H:%M:%S')
+         if DoorOpenTimer==1: 
+           currentTimeDate=datetime.strptime(datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S'),'%Y-%m-%d %H:%M:%S')
            if(currentTimeDate-TimeDoorOpened).seconds>900 and DoorOpenTimerMessageSent==0:
                     print "Your Garage Door has been Open for 15 minutes"
                     DoorOpenTimerMessageSent = 1
