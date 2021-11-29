@@ -18,10 +18,10 @@ try:
   while 1 >=0:
     
     GPIO.output(7, GPIO.LOW)   # turns the first relay switch ON
-    time.sleep(2)             # pauses system for 1/2 second
+    time.sleep(30)             # pauses system for 1/2 second
     GPIO.output(7, GPIO.HIGH)  # turns the first relay switch OFF
     GPIO.output(11, GPIO.LOW)  # turns the second relay switch ON
-    time.sleep(3)
+    time.sleep(30)
     GPIO.output(11, GPIO.HIGH)
     
 
