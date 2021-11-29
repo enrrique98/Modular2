@@ -28,7 +28,7 @@ try:
     if DoorOpenTimer == 1:
       currentTimeDate = datetime.strptime(datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S'),'%Y-%m-%d %H:%M:%S')
     if (currentTimeDate-TimeDoorOpened).seconds>900 and DoorOpenTimerMessageSent==0:
-      print "Your Garage Door has been Open for 15 minutes"
+      print ("Your Garage Door has been Open for 15 minutes")
       DoorOpenTimerMessageSent = 1
     if GPIO.input(16) == GPIO.HIGH and GPIO.input(18) == GPIO.HIGH:  #Door Status is Unknown
       logfile = open("/home/pi/GarageWeb/static/log.txt","a")
@@ -55,7 +55,7 @@ try:
         DoorOpenTimerMessageSent = 0
 except KeyboardInterrupt:
   logfile = open("/home/pi/GarageWeb/static/log.txt","a")
-  logfile.write(datetime.now().strftime("     Log Program Shutdown -- %Y/%m/%d -- %H:%M  -- Goodbye! \n"))
+  logfile.write(datetime.now().strftime(" Log Program Shutdown -- %Y/%m/%d -- %H:%M  -- Goodbye! \n"))
   logfile.close()
-	print(datetime.now().strftime("     Log Program Shutdown -- %Y/%m/%d -- %H:%M  -- Goodbye! \n"))
+	print(datetime.now().strftime("Log Program Shutdown -- %Y/%m/%d -- %H:%M  -- Goodbye! \n"))
   GPIO.cleanup()
