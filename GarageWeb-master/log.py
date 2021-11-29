@@ -25,11 +25,11 @@ DoorOpenTimerMessageSent = 1  #Turn off messages until timer is started
 try:
         while 1 >= 0:
          time.sleep(1)
-         if DoorOpenTimer == 1:  #Door Open Timer has Started
-	         currentTimeDate = datetime.strptime(datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S'),'%Y-%m-%d %H:%M:%S')
-                 if (currentTimeDate - TimeDoorOpened).seconds > 900 and DoorOpenTimerMessageSent == 0:
-                  print "Your Garage Door has been Open for 15 minutes"
-                  DoorOpenTimerMessageSent = 1
+         if DoorOpenTimer == 1:
+           currentTimeDate = datetime.strptime(datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S'),'%Y-%m-%d %H:%M:%S')
+            if (currentTimeDate - TimeDoorOpened).seconds>900 and DoorOpenTimerMessageSent==0:
+            print "Your Garage Door has been Open for 15 minutes"
+            DoorOpenTimerMessageSent = 1
 
          if GPIO.input(16) == GPIO.HIGH and GPIO.input(18) == GPIO.HIGH:  #Door Status is Unknown
            logfile = open("/home/pi/GarageWeb/static/log.txt","a")
